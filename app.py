@@ -1,11 +1,12 @@
 import streamlit as st
 
 
-rename = st.text_input("Give me the rename mapping...")
-content = st.text_area("Content here...")
+rename = st.text_area("Give me the rename mapping...", height=150)
+content = st.text_area("Content here...", height=200)
 modified_cnt = {}
 
 if rename and content:
+    rename = rename.replace("\n", " ")
     maps = rename.split(";")
     for each_map in maps:
         old = each_map.split(":")[0].strip()
